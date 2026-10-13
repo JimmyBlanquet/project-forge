@@ -141,6 +141,7 @@ async function setupWebhook(): Promise<void> {
             url: webhookUrl,
         });
         console.log('Created webhook endpoint');
+        console.log('Set STRIPE_WEBHOOK_SECRET to this endpoint\'s signing secret (shown on its page in the Stripe dashboard), or every webhook will be rejected');
     }
 }
 

@@ -116,6 +116,9 @@ npm run stripe:listen
 
 This command starts the Stripe CLI in listening mode and forwards incoming webhook events to `http://localhost:3000/webhook/stripe`. 
 
+3. **Set the webhook signing secret**  
+The CLI prints a `whsec_...` signing secret when it starts. Add it to `.env` as `STRIPE_WEBHOOK_SECRET`: the webhook route rejects every event whose signature it cannot verify. In production, use the signing secret of your endpoint, shown on its page in the Stripe dashboard. If you create the endpoint by hand, choose the **Snapshot** event payload style: the route reads `event.data.object`.
+
 ### Playwright Agents (v1.56+)
 
 AI-assisted E2E testing with 3 specialized agents:

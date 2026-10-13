@@ -91,5 +91,6 @@ pnpm stripe:listen    # Webhook listener local
 - `NEXT_PUBLIC_STRIPE_PRICING_TABLE_ID` - ID Pricing Table Stripe
 - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` - Clé publique Stripe
 - `STRIPE_SECRET_KEY` - Clé secrète Stripe
+- `STRIPE_WEBHOOK_SECRET` - Secret de signature du webhook (`whsec_...`, affiché par `stripe:listen` en local, dashboard Stripe en prod). Sans lui, la route refuse tous les webhooks.
 - `GOOGLE_OAUTH_CLIENT_ID` / `SECRET` (optionnel)
 - `GITHUB_OAUTH_CLIENT_ID` / `SECRET` (optionnel)
