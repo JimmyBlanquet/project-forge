@@ -110,7 +110,7 @@ bash scripts/check-no-internal-refs.sh
 The scanner detects:
 - API keys in clear (OpenAI `sk-*`, Anthropic `sk-ant-*`, Google `AIza*`, AWS `AKIA*`, GitHub `ghp_*`, Slack `xoxb-*`)
 - Private IPs (RFC 1918 + Tailscale CGNAT 100.64-127.x.x.x)
-- Credentials inline in URLs (`https://user:pass@`)
+- Credentials inline in URLs (`https://` followed by `user:pass@`)
 - Tracked `.env` files (should be gitignored, except `.env.example`)
 - Custom project patterns from `.security-patterns` (one regex per line)
 
