@@ -76,6 +76,10 @@ In order to collect payments and setup subscriptions for your users, we will be 
 
 Your pricing table should now be set up
 
+9. In the Stripe dashboard, open *Billing → Revenue recovery → Retries* and set *If all retries for a payment fail* to **Cancel the subscription** or **Mark the subscription as unpaid**. A customer whose payment fails keeps access while Stripe retries (status `past_due`); with *Leave the subscription past-due*, that access never ends.
+
+The webhook re-reads the customer's subscriptions from Stripe on every event, so it needs `STRIPE_SECRET_KEY` (a `sk_` key). If that read keeps failing, the route answers 500 and Stripe gives up after 3 days: until the next subscription event for that customer, their access stays where it was.
+
 ### Setup Database
 This boilerplate uses Drizzle ORM to interact with a PostgresDb. 
 
